@@ -1,0 +1,14 @@
+# le paramètre UID et GID permet de définir 
+# l'utilisateur et le groupe de l'utilisateur qui exécute le conteneur
+# Si docker n'est pas installer en rootless mode, definir ces variables
+# permet de ne pas avoir de problème de permission sur les fichiers générés
+services:
+  php:
+    image: composer:2
+    user: ${UID:-1000}:${GID:-1000}
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - 8080:80
+    command: "php -S 0.0.0.0:80 -t public/"

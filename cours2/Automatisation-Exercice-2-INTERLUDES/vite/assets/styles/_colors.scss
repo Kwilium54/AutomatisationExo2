@@ -1,0 +1,12 @@
+@use "sass:color";
+
+$black: #2c3e50;
+$white: #ecf0f1;
+
+$color_primary: #1abc9c;
+$color_primary_dark: color.adjust($color_primary, $lightness: -10%);
+$color_secondary: #9b59b6;
+$color_secondary_dark: color.adjust($color_secondary, $lightness: -10%);
+
+$color_text: $black;
+$color_text_light: $white;

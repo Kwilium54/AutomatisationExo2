@@ -1,0 +1,32 @@
+@use "colors";
+@use "base";
+@use "navbar";
+@use "buttons";
+
+
+.content {
+    margin: auto;
+    max-width: 800px;
+    
+    h1 {
+        text-align: center;
+    }
+
+    .add-element-wrapper {
+        text-align: center;
+        margin: 1em 1em 2em 1em;
+    }
+
+    #add-zone {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .element {
+            padding: 2em;
+            text-align: center;
+            margin: 0.5em;
+            background-color: colors.$color_secondary;
+        }
+    }
+}

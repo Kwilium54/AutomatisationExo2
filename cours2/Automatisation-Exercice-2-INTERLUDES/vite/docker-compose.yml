@@ -1,0 +1,23 @@
+# le paramètre UID et GID permet de définir 
+# l'utilisateur et le groupe de l'utilisateur qui exécute le conteneur
+# Si docker n'est pas installer en rootless mode, definir ces variables
+# permet de ne pas avoir de problème de permission sur les fichiers générés
+services:
+  server:
+    image: nginx:alpine
+    ports:
+      - 8080:80
+    volumes:
+      - ./public:/usr/share/nginx/html
+
+  node:
+    image: node:22-alpine
+    user: ${UID:-1000}:${GID:-1000}
+    command: npm run dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  

@@ -1,0 +1,35 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<div>
+		<a href="/">< Retour à l'accueil</a>
+	</div>
+	<h1 class="companies-titre">{{ company.name }}</h1>
+
+	<div class="offices-list">
+		{% for office in company.offices %}
+			<div class="office">
+				<h2>{{ office.name }}</h2>
+				<div class="text-center">
+					<button class="office-edit" data-office-id="{{ office.id }}">✏️&nbsp;&nbsp;Éditer</button>
+				</div>
+				<p>Siège social: {{ office.headOffice ? 'Oui' : 'Non' }}</p>
+				<p>Adresse: {{ office.getFullAddressAttribute() }}</p>
+				<div>
+					Listes des employées:
+					<div class="employees-list">
+
+						{% for employee in office.employees %}
+							<div class="employee">
+								<div class="name">{{ employee.displayName }}</div>
+								<div class="job-titel"><div class="line-desc">titre:</div>{{ employee.job_title }}</div>
+								<div class="email"><div class="line-desc">mail:</div> {{ employee.email }}</div>
+								<div class="tel"><div class="line-desc">tel:</div> {{ employee.phone ?? ' - ' }}</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

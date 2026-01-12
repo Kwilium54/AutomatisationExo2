@@ -1,0 +1,143 @@
+:root {
+    --main-bg-color: #e8eaf6;
+    --main-color: #1A237E;
+    --accent-color: #7e761a;
+}
+
+a, a:visited {
+    color: var(--accent-color);
+}
+
+html, body {
+    background: var(--main-bg-color);
+    color: var(--main-color);
+
+    /* On utilise ici les polices du système en priorité, pour avoir une experience homogène pour l'utilisateur (et c'est très rapide) */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.companies-titre {
+    text-align: center;
+    margin: 2rem 0;
+}
+.companies-listing, .offices-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.company {
+    width: 30%;
+    min-width: 280px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.company .image {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    padding-top: 56.25%; /* ratio d'affichage 16:9 */
+    background-size: cover;
+    background-color: var(--accent-color);
+}
+
+.company .company-content {
+    padding: 1rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.company .company-content div {
+    flex-grow: 1;
+}
+.company .company-content div:last-child {
+    text-align: right;
+}
+
+.office {
+    width: 320px;
+}
+
+.employees-list .employee {
+    background: #FFF;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employees-list .employee div {
+    margin-bottom: 4px;
+    display: flex;
+}
+
+.employees-list .employee .name {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.employees-list .employee .line-desc {
+    width: 60px;
+    color: var(--accent-color);
+}
+
+.button, button, input[type="submit"] {
+    background: var(--main-color);
+    color: var(--main-bg-color);
+    border-radius: 2px;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+    background: var(--accent-color);
+}
+
+.button:active, button:active, input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal {
+    background-color: var(--main-bg-color);
+    padding: 1em ;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.modal-content {
+    margin-bottom: 1em;
+}
+
+.active {
+    display: flex;
+}
+
+
+

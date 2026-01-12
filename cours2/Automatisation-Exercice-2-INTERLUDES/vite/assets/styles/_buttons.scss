@@ -1,0 +1,19 @@
+@use "colors";
+
+button {
+    background: colors.$color_primary;
+    color: colors.$color_text_light;
+    border-radius: 2px;
+    font-size: 1.2em;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background: colors.$color_primary_dark;
+    }
+    &:active {
+        background: colors.$color_primary_dark;
+        transform: scale(0.95);
+    }
+}

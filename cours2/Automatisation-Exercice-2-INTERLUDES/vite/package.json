@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "sass": "^1.*",
+    "vite": "^5.*"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build --emptyOutDir"
+  }
+}

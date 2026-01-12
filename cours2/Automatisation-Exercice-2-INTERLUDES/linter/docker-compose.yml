@@ -1,0 +1,18 @@
+# le paramètre UID et GID permet de définir 
+# l'utilisateur et le groupe de l'utilisateur qui exécute le conteneur
+# Si docker n'est pas installer en rootless mode, definir ces variables
+# permet de ne pas avoir de problème de permission sur les fichiers générés
+services:
+  node:
+    user: ${UID:-1000}:${GID:-1000}
+    image: node:22-alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  php:
+    user: ${UID:-1000}:${GID:-1000}
+    image: composer:2
+    volumes:
+      - .:/app
+    working_dir: /app

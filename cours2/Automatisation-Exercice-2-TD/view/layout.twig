@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}Annuaire des société{% endblock %}</title>
+	{% block stylesheets %}
+		<link rel="stylesheet" href="/assets/style.css" >
+	{% endblock %}
+</head>
+
+<body>
+{% block body %}{% endblock %}
+
+
+<div id="modal-wrapper" class="modal-wrapper">
+	<div id="modal">
+		<div class="modal-header">
+			<h2 id="modal-title">Titre</h2>
+			<button id="close-modal">X</button>
+		</div>
+		<div id="modal-content">
+			Bonjour
+		</div>
+	</div>
+</div>
+
+{% block scripts %}
+	<script src="/assets/script.js"></script>
+{% endblock %}
+</body>
+</html>

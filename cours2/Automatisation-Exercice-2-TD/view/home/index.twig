@@ -1,0 +1,22 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+	<h1 class="companies-titre">Liste des sociétés</h1>
+
+	<div class="companies-listing">
+		{% for company in companies %}
+			<div class="company">
+				<div class="image" style="background-image: url({{ company.image }});">
+				</div>
+				<div class="company-content">
+					<div>
+						<h2>{{ company.name }}</h2>
+					</div>
+					<div>
+						<a href="/company/{{ company.id }}">Voir le détails</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

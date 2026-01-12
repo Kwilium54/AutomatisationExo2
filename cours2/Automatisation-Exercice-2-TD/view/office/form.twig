@@ -1,0 +1,37 @@
+<form id="officeForm" method="post" action="/office/{{ office.id }}/edit">
+	<div>
+		<label for="officeID">ID du bureau</label>
+		<input type="text" name="office ID" id="officeID" value="{{ office.id }}" disabled/>
+	</div>
+	<div>
+		<label for="officeName">Nom du bureau</label>
+		<input type="text" maxlength="255" name="officeName" id="officeName" value="{{ office.name }}" />
+	</div>
+	<div>
+		<label for="officeAddress">Adresse</label>
+		<input type="text" maxlength="255" name="officeAddress" id="officeAddress" value="{{ office.address }}" />
+	</div>
+	<div>
+		<label for="officeCity">Ville</label>
+		<input type="text" maxlength="255" name="officeCity" id="officeCity" value="{{ office.city }}" />
+	</div>
+	<div>
+		<label for="officeZipCode">Code Postal</label>
+		<input type="text" maxlength="255" name="officeZipCode" id="officeZipCode" value="{{ office.zip_code }}" />
+	</div>
+	<div>
+		<label for="officeCountry">Pays</label>
+		<input type="text" maxlength="255" name="officeCountry" id="officeCountry" value="{{ office.country }}" />
+	</div>
+	<div>
+		<label for="officeEmail">Email</label>
+		<input type="email" maxlength="255" name="officeEmail" id="officeEmail" value="{{ office.email }}" />
+	</div>
+	<div>
+		<label for="officePhone">Telephone</label>
+		<input type="tel" maxlength="255" name="officePhone" id="officePhone" value="{{ office.phone }}" />
+	</div>
+	<div>
+		<input type="submit" value="Enregistrer" />
+	</div>
+</form>

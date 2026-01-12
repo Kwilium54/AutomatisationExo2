@@ -1,0 +1,14 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "demo de eslint",
+  "scripts": {
+    "lint": "eslint . --ext .js --ignore-path .gitignore "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-airbnb-base": "^15.0.0"
+  }
+}
